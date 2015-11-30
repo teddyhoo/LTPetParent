@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>TiimeWindow</key>
+		<string>7a-9a</string>
+		<key>Overnight</key>
+		<string>Ineligible</string>
+		<key>Boarding</key>
+		<string>Ineligible</string>
+		<key>Dog Park</key>
+		<string>Ineligible</string>
+	</dict>
+</array>
+</plist>
