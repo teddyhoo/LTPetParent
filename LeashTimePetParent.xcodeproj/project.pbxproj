@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0A33241C4673690082B238 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0A33231C4673690082B238 /* MobileCoreServices.framework */; };
+		AD0A33261C4673710082B238 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0A33251C4673710082B238 /* SystemConfiguration.framework */; };
 		AD58A80E1BE2B43D0058F440 /* DayScheduleCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD58A80D1BE2B43D0058F440 /* DayScheduleCellTableViewCell.m */; };
 		AD58A8891BE2E4990058F440 /* dollar-circle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58A8881BE2E4990058F440 /* dollar-circle@3x.png */; };
 		AD58A8911BE2E5100058F440 /* envelope-128x128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58A8901BE2E5100058F440 /* envelope-128x128@2x.png */; };
@@ -49,6 +51,11 @@
 		AD58A96B1BF379F30058F440 /* black-visit-note@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58A96A1BF379F30058F440 /* black-visit-note@3x.png */; };
 		AD58A96E1BF633D60058F440 /* dark-back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58A96D1BF633D40058F440 /* dark-back@3x.png */; };
 		AD58A9701BF660820058F440 /* add-white-circle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58A96F1BF660820058F440 /* add-white-circle@3x.png */; };
+		AD748BFF1C468CBA00CC376B /* AdobeCreativeSDKCoreResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD748BFE1C468CBA00CC376B /* AdobeCreativeSDKCoreResources.bundle */; };
+		AD748C021C468D0E00CC376B /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C001C468D0E00CC376B /* libc++.1.dylib */; };
+		AD748C031C468D0E00CC376B /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C011C468D0E00CC376B /* libz.1.dylib */; };
+		AD748C051C468E2100CC376B /* login-button-341x94@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD748C041C468E2100CC376B /* login-button-341x94@3x.png */; };
+		AD75904D1C4684C900E428A7 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD75904C1C4684C900E428A7 /* AdobeCreativeSDKCore.framework */; };
 		AD7A2F881BF773E40031F55B /* high-blue-back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7A2F871BF773E40031F55B /* high-blue-back@3x.png */; };
 		AD7A2F8D1BF773ED0031F55B /* green-dot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7A2F891BF773ED0031F55B /* green-dot@3x.png */; };
 		AD7A2F8E1BF773ED0031F55B /* gold-dot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7A2F8A1BF773ED0031F55B /* gold-dot@3x.png */; };
@@ -61,7 +68,6 @@
 		ADEB601B1BAEF8A8002BDD46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADEB60191BAEF8A8002BDD46 /* Main.storyboard */; };
 		ADEB601D1BAEF8A8002BDD46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADEB601C1BAEF8A8002BDD46 /* Images.xcassets */; };
 		ADEB60201BAEF8A8002BDD46 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADEB601E1BAEF8A8002BDD46 /* LaunchScreen.xib */; };
-		ADEB602C1BAEF8A8002BDD46 /* LeashTimePetParentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEB602B1BAEF8A8002BDD46 /* LeashTimePetParentTests.m */; };
 		ADEB60491BAEF8C8002BDD46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEB60361BAEF8C8002BDD46 /* AppDelegate.m */; };
 		ADEB604B1BAEF8C8002BDD46 /* ProfileFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEB603A1BAEF8C8002BDD46 /* ProfileFormViewController.m */; };
 		ADEB604C1BAEF8C8002BDD46 /* CustomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEB603C1BAEF8C8002BDD46 /* CustomAnimationController.m */; };
@@ -204,8 +210,6 @@
 		ADEEB5FD1BB4B2E300E6F4C3 /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB5F11BB4B2E300E6F4C3 /* JTVerticalCalendarView.m */; };
 		ADEEB6001BB4B36000E6F4C3 /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB5FF1BB4B36000E6F4C3 /* RequestViewController.m */; };
 		ADEEB6071BB4B37500E6F4C3 /* RouteOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB6021BB4B37500E6F4C3 /* RouteOptionsView.m */; };
-		ADEEB6081BB4B37500E6F4C3 /* ChooseRouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB6041BB4B37500E6F4C3 /* ChooseRouteView.m */; };
-		ADEEB6091BB4B37500E6F4C3 /* ChooseVisualRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB6061BB4B37500E6F4C3 /* ChooseVisualRoute.m */; };
 		ADEEB60C1BB4B39900E6F4C3 /* PSPDFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB60B1BB4B39900E6F4C3 /* PSPDFTextView.m */; };
 		ADEEB60F1BB4B3E500E6F4C3 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB60E1BB4B3E500E6F4C3 /* HMSegmentedControl.m */; };
 		ADEEB6221BB4B4F900E6F4C3 /* RootForm.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB6171BB4B4F900E6F4C3 /* RootForm.m */; };
@@ -219,17 +223,9 @@
 		ADEEB62F1BB4B5C800E6F4C3 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEEB62D1BB4B5C800E6F4C3 /* PrivacyPolicyViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		ADEB60261BAEF8A8002BDD46 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ADEB60041BAEF8A8002BDD46 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ADEB600B1BAEF8A8002BDD46;
-			remoteInfo = LeashTimePetParent;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		AD0A33231C4673690082B238 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AD0A33251C4673710082B238 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AD58A80C1BE2B43D0058F440 /* DayScheduleCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayScheduleCellTableViewCell.h; sourceTree = "<group>"; };
 		AD58A80D1BE2B43D0058F440 /* DayScheduleCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayScheduleCellTableViewCell.m; sourceTree = "<group>"; };
 		AD58A8881BE2E4990058F440 /* dollar-circle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dollar-circle@3x.png"; sourceTree = "<group>"; };
@@ -276,6 +272,11 @@
 		AD58A96A1BF379F30058F440 /* black-visit-note@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-visit-note@3x.png"; sourceTree = "<group>"; };
 		AD58A96D1BF633D40058F440 /* dark-back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-back@3x.png"; sourceTree = "<group>"; };
 		AD58A96F1BF660820058F440 /* add-white-circle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-white-circle@3x.png"; sourceTree = "<group>"; };
+		AD748BFE1C468CBA00CC376B /* AdobeCreativeSDKCoreResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKCoreResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework/Versions/A/Resources/AdobeCreativeSDKCoreResources.bundle; sourceTree = "<group>"; };
+		AD748C001C468D0E00CC376B /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+		AD748C011C468D0E00CC376B /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		AD748C041C468E2100CC376B /* login-button-341x94@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-341x94@3x.png"; sourceTree = "<group>"; };
+		AD75904C1C4684C900E428A7 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
 		AD7A2F871BF773E40031F55B /* high-blue-back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "high-blue-back@3x.png"; sourceTree = "<group>"; };
 		AD7A2F891BF773ED0031F55B /* green-dot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-dot@3x.png"; sourceTree = "<group>"; };
 		AD7A2F8A1BF773ED0031F55B /* gold-dot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gold-dot@3x.png"; sourceTree = "<group>"; };
@@ -291,7 +292,6 @@
 		ADEB601A1BAEF8A8002BDD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADEB601C1BAEF8A8002BDD46 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ADEB601F1BAEF8A8002BDD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		ADEB60251BAEF8A8002BDD46 /* LeashTimePetParentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeashTimePetParentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEB602A1BAEF8A8002BDD46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADEB602B1BAEF8A8002BDD46 /* LeashTimePetParentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeashTimePetParentTests.m; sourceTree = "<group>"; };
 		ADEB60351BAEF8C8002BDD46 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -516,10 +516,6 @@
 		ADEEB5FF1BB4B36000E6F4C3 /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
 		ADEEB6011BB4B37500E6F4C3 /* RouteOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteOptionsView.h; sourceTree = "<group>"; };
 		ADEEB6021BB4B37500E6F4C3 /* RouteOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteOptionsView.m; sourceTree = "<group>"; };
-		ADEEB6031BB4B37500E6F4C3 /* ChooseRouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseRouteView.h; path = LeashTimePetParent/ChooseRouteView.h; sourceTree = "<group>"; };
-		ADEEB6041BB4B37500E6F4C3 /* ChooseRouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseRouteView.m; path = LeashTimePetParent/ChooseRouteView.m; sourceTree = "<group>"; };
-		ADEEB6051BB4B37500E6F4C3 /* ChooseVisualRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChooseVisualRoute.h; path = LeashTimePetParent/ChooseVisualRoute.h; sourceTree = "<group>"; };
-		ADEEB6061BB4B37500E6F4C3 /* ChooseVisualRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChooseVisualRoute.m; path = LeashTimePetParent/ChooseVisualRoute.m; sourceTree = "<group>"; };
 		ADEEB60A1BB4B39900E6F4C3 /* PSPDFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSPDFTextView.h; path = LeashTimePetParent/PSPDFTextView.h; sourceTree = "<group>"; };
 		ADEEB60B1BB4B39900E6F4C3 /* PSPDFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSPDFTextView.m; path = LeashTimePetParent/PSPDFTextView.m; sourceTree = "<group>"; };
 		ADEEB60D1BB4B3E500E6F4C3 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMSegmentedControl.h; path = LeashTimePetParent/HMSegmentedControl.h; sourceTree = "<group>"; };
@@ -548,6 +544,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD748C021C468D0E00CC376B /* libc++.1.dylib in Frameworks */,
+				AD748C031C468D0E00CC376B /* libz.1.dylib in Frameworks */,
+				AD75904D1C4684C900E428A7 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				AD0A33261C4673710082B238 /* SystemConfiguration.framework in Frameworks */,
+				AD0A33241C4673690082B238 /* MobileCoreServices.framework in Frameworks */,
 				ADEB610A1BAEF9C7002BDD46 /* CoreLocation.framework in Frameworks */,
 				ADEB61141BAEF9EB002BDD46 /* Accelerate.framework in Frameworks */,
 				ADEB61121BAEF9E3002BDD46 /* Foundation.framework in Frameworks */,
@@ -557,27 +558,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADEB60221BAEF8A8002BDD46 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD58A8BA1BE7705F0058F440 /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				ADEEB6031BB4B37500E6F4C3 /* ChooseRouteView.h */,
-				ADEEB6041BB4B37500E6F4C3 /* ChooseRouteView.m */,
-				ADEEB6051BB4B37500E6F4C3 /* ChooseVisualRoute.h */,
-				ADEEB6061BB4B37500E6F4C3 /* ChooseVisualRoute.m */,
-			);
-			name = Deprecated;
-			sourceTree = "<group>";
-		};
 		AD58A95B1BF3683B0058F440 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,7 +596,7 @@
 		ADEB60031BAEF8A8002BDD46 = {
 			isa = PBXGroup;
 			children = (
-				AD58A8BA1BE7705F0058F440 /* Deprecated */,
+				AD748BFE1C468CBA00CC376B /* AdobeCreativeSDKCoreResources.bundle */,
 				ADEB61171BAEFA4C002BDD46 /* Frameworks */,
 				ADEEB6141BB4B4BA00E6F4C3 /* UIComponents */,
 				ADEB600E1BAEF8A8002BDD46 /* LeashTimePetParent */,
@@ -626,7 +609,6 @@
 			isa = PBXGroup;
 			children = (
 				ADEB600C1BAEF8A8002BDD46 /* LeashTimePetParent.app */,
-				ADEB60251BAEF8A8002BDD46 /* LeashTimePetParentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -808,6 +790,7 @@
 		ADEB60571BAEF908002BDD46 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				AD748C041C468E2100CC376B /* login-button-341x94@3x.png */,
 				AD58A95B1BF3683B0058F440 /* Controls */,
 				ADEEB5911BB4B24E00E6F4C3 /* Backgrounds */,
 				ADECF1D81BB8ADE500FE34E9 /* Fonts */,
@@ -885,13 +868,18 @@
 		ADEB61171BAEFA4C002BDD46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADEB60581BAEF911002BDD46 /* AFNetworking */,
+				AD748C001C468D0E00CC376B /* libc++.1.dylib */,
+				AD748C011C468D0E00CC376B /* libz.1.dylib */,
+				AD75904C1C4684C900E428A7 /* AdobeCreativeSDKCore.framework */,
+				AD0A33251C4673710082B238 /* SystemConfiguration.framework */,
+				AD0A33231C4673690082B238 /* MobileCoreServices.framework */,
 				ADEB61131BAEF9EB002BDD46 /* Accelerate.framework */,
 				ADEB61111BAEF9E3002BDD46 /* Foundation.framework */,
 				ADEB610F1BAEF9DC002BDD46 /* UIKit.framework */,
 				ADEB610D1BAEF9D6002BDD46 /* MapKit.framework */,
 				ADEB610B1BAEF9CF002BDD46 /* CoreGraphics.framework */,
 				ADEB61091BAEF9C7002BDD46 /* CoreLocation.framework */,
+				ADEB60581BAEF911002BDD46 /* AFNetworking */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1100,24 +1088,6 @@
 			productReference = ADEB600C1BAEF8A8002BDD46 /* LeashTimePetParent.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ADEB60241BAEF8A8002BDD46 /* LeashTimePetParentTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ADEB60321BAEF8A8002BDD46 /* Build configuration list for PBXNativeTarget "LeashTimePetParentTests" */;
-			buildPhases = (
-				ADEB60211BAEF8A8002BDD46 /* Sources */,
-				ADEB60221BAEF8A8002BDD46 /* Frameworks */,
-				ADEB60231BAEF8A8002BDD46 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ADEB60271BAEF8A8002BDD46 /* PBXTargetDependency */,
-			);
-			name = LeashTimePetParentTests;
-			productName = LeashTimePetParentTests;
-			productReference = ADEB60251BAEF8A8002BDD46 /* LeashTimePetParentTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1129,10 +1099,6 @@
 				TargetAttributes = {
 					ADEB600B1BAEF8A8002BDD46 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					ADEB60241BAEF8A8002BDD46 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = ADEB600B1BAEF8A8002BDD46;
 					};
 				};
 			};
@@ -1150,7 +1116,6 @@
 			projectRoot = "";
 			targets = (
 				ADEB600B1BAEF8A8002BDD46 /* LeashTimePetParent */,
-				ADEB60241BAEF8A8002BDD46 /* LeashTimePetParentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1160,6 +1125,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD748BFF1C468CBA00CC376B /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				ADEEB5B11BB4B26B00E6F4C3 /* cat1.jpg in Resources */,
 				ADEB601B1BAEF8A8002BDD46 /* Main.storyboard in Resources */,
 				ADEEB57A1BB4B24100E6F4C3 /* photo3.JPG in Resources */,
@@ -1253,6 +1219,7 @@
 				AD7A2F8D1BF773ED0031F55B /* green-dot@3x.png in Resources */,
 				AD58A95A1BF368300058F440 /* add-line-icon-64@3x.png in Resources */,
 				AD58A89B1BE35B240058F440 /* dark-green-1200x120@3x.png in Resources */,
+				AD748C051C468E2100CC376B /* login-button-341x94@3x.png in Resources */,
 				ADECF1E41BB8ADF700FE34E9 /* CompassRoseCPC-BoldItalic.otf in Resources */,
 				AD58A9341BEFFBB40058F440 /* leashtime-logo-big@3x.png in Resources */,
 				AD58A89D1BE35C1E0058F440 /* add-note-plussign-green@3x.png in Resources */,
@@ -1283,13 +1250,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADEB60231BAEF8A8002BDD46 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1308,7 +1268,6 @@
 				ADEB60D61BAEF976002BDD46 /* PMCalendarController.m in Sources */,
 				ADEB608F1BAEF947002BDD46 /* WellnessViewController.m in Sources */,
 				ADEB60121BAEF8A8002BDD46 /* main.m in Sources */,
-				ADEEB6081BB4B37500E6F4C3 /* ChooseRouteView.m in Sources */,
 				ADEB60631BAEF92E002BDD46 /* DataClient.m in Sources */,
 				ADEB604B1BAEF8C8002BDD46 /* ProfileFormViewController.m in Sources */,
 				ADEEB6221BB4B4F900E6F4C3 /* RootForm.m in Sources */,
@@ -1342,7 +1301,6 @@
 				ADEB60F51BAEF986002BDD46 /* AFHTTPSessionManager.m in Sources */,
 				ADEB60F91BAEF986002BDD46 /* AFHTTPRequestOperation.m in Sources */,
 				ADEB60511BAEF8C8002BDD46 /* MapViewController.m in Sources */,
-				ADEEB6091BB4B37500E6F4C3 /* ChooseVisualRoute.m in Sources */,
 				ADEB60521BAEF8C8002BDD46 /* SWRevealViewController.m in Sources */,
 				ADEEB5FB1BB4B2E300E6F4C3 /* JTDateHelper.m in Sources */,
 				ADEB60DC1BAEF976002BDD46 /* PMThemeShadow.m in Sources */,
@@ -1383,23 +1341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADEB60211BAEF8A8002BDD46 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADEB602C1BAEF8A8002BDD46 /* LeashTimePetParentTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ADEB60271BAEF8A8002BDD46 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ADEB600B1BAEF8A8002BDD46 /* LeashTimePetParent */;
-			targetProxy = ADEB60261BAEF8A8002BDD46 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ADEB60191BAEF8A8002BDD46 /* Main.storyboard */ = {
@@ -1442,6 +1384,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = ../;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1487,6 +1430,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = ../;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1507,12 +1451,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = /Users/tedhooban/Desktop/AdobeCreativeSDKFrameworks;
 				INFOPLIST_FILE = LeashTimePetParent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/,
-					"/Users/tedhooban/Desktop/UIKit/Open-Source-Current/EZForm-master/EZForm",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1522,48 +1466,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = /Users/tedhooban/Desktop/AdobeCreativeSDKFrameworks;
 				INFOPLIST_FILE = LeashTimePetParent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/,
-					"/Users/tedhooban/Desktop/UIKit/Open-Source-Current/EZForm-master/EZForm",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		ADEB60331BAEF8A8002BDD46 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LeashTimePetParentTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeashTimePetParent.app/LeashTimePetParent";
-			};
-			name = Debug;
-		};
-		ADEB60341BAEF8A8002BDD46 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LeashTimePetParentTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeashTimePetParent.app/LeashTimePetParent";
 			};
 			name = Release;
 		};
@@ -1584,15 +1494,6 @@
 			buildConfigurations = (
 				ADEB60301BAEF8A8002BDD46 /* Debug */,
 				ADEB60311BAEF8A8002BDD46 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ADEB60321BAEF8A8002BDD46 /* Build configuration list for PBXNativeTarget "LeashTimePetParentTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ADEB60331BAEF8A8002BDD46 /* Debug */,
-				ADEB60341BAEF8A8002BDD46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

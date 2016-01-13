@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JTCalendar.h"
 #import "VisitsAndTracking.h"
-#import "ChooseRouteView.h"
 #import "RouteOptionsView.h"
-#import "ChooseVisualRoute.h"
 #import "AddNoteView.h"
 
 @interface RequestViewController : UIViewController <JTCalendarDelegate,UITableViewDelegate,UITableViewDataSource>

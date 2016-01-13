@@ -28,6 +28,7 @@
 #import "FrontViewController.h"
 #import "SWRevealViewController.h"
 #import "VisitsAndTracking.h"
+#import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h>
 
 @interface FrontViewController() <NSURLSessionDelegate> {
     
@@ -45,6 +46,11 @@
 
 
 @implementation FrontViewController
+
+
+
+static NSString* const CreativeSDKClientSecret = @"fcf29423-db60-4815-81ac-2ec91037d739";
+static NSString* const CreativeSDKClientId = @"b76f5d8aa2c046c6a9e8a6604a1235f4";
 
 #pragma mark - View lifecycle
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
@@ -83,19 +89,15 @@ BOOL isIphone4;
     
     
     _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_loginButton setBackgroundImage:[UIImage imageNamed:@"pink-button-650"] forState:UIControlStateNormal];
-    //_loginButton.alpha = 0.7;
+    [_loginButton setBackgroundImage:[UIImage imageNamed:@"login-button-341x94"] forState:UIControlStateNormal];
     [_loginButton addTarget:self
                      action:@selector(loginButtonClick)
            forControlEvents:UIControlEventTouchUpInside];
+
     
-    UILabel *loginLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 300, 24)];
-    [loginLabel setFont:[UIFont fontWithName:@"CompassRoseCPC-Light" size:16]];
-    loginLabel.textAlignment = NSTextAlignmentCenter;
-    [loginLabel setTextColor:[UIColor whiteColor]];
-    [loginLabel setText:@"LOGIN"];
-    [_loginButton addSubview:loginLabel];
     
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId
+                                                                   clientSecret:CreativeSDKClientSecret enableSignUp:true];
     
     
     

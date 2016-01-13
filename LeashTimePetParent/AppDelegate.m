@@ -14,10 +14,17 @@
 #import "CustomAnimationController.h"
 #import "PhotoGallery.h"
 #import "VisitsAndTracking.h"
+#import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h>
 
 @interface AppDelegate()<SWRevealViewControllerDelegate>
 @end
+
+
 @implementation AppDelegate
+
+
+static NSString* const CreativeSDKClientSecret = @"fcf29423-db60-4815-81ac-2ec91037d739";
+static NSString* const CreativeSDKClientId = @"b76f5d8aa2c046c6a9e8a6604a1235f4";
 
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
