@@ -9,11 +9,15 @@
 #import "PhotoGallery.h"
 #import "JT3DScrollView.h"
 #import "GalleryView.h"
+#import <AdobeCreativeSDKImage/AdobeCreativeSDKImage.h>
 
 
-@interface PhotoGallery () {
+@interface PhotoGallery () <AdobeUXImageEditorViewControllerDelegate> {
     
     NSMutableArray *pictureData;
+    AdobeUXImageEditorViewController *editorController;
+    
+    int tagImageEditing;
     
 }
 
@@ -30,7 +34,6 @@
 
     self.view.userInteractionEnabled = YES;
     self.view.backgroundColor = [UIColor whiteColor];
-    
     
     _scrollView = [[JT3DScrollView alloc]initWithFrame:CGRectMake(40, 60, self.view.frame.size.width - 40, self.view.frame.size.height -80)];
     
@@ -53,6 +56,8 @@
     
     pictureData = [[NSMutableArray alloc] initWithContentsOfFile:pListData];
     
+    int tagIndex = 0;
+    
     for (NSString *imageName in pictureData) {
         
         CGFloat width = CGRectGetWidth(self.scrollView.frame);
@@ -64,70 +69,76 @@
         GalleryView *cardTopic = [[GalleryView alloc]initWithFrame:CGRectMake(x, 0, width, height)
                                                            andData:imageName
                                                         andCaption:captionString];
-        
+        cardTopic.tag =tagIndex;
+        tagIndex++;
         self.scrollView.contentSize = CGSizeMake(x+width,height);
         [self.scrollView addSubview:cardTopic];
         
-        /*NSString *photoFileName = [NSString stringWithFormat:@"photo%i.JPG",i];
-        UIImageView *photoFrame = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, 280, 280)];
-        [photoFrame setImage:[UIImage imageNamed:photoFileName]];
-        [_photoArray addObject:photoFrame];*/
-        
-        
-        
     }
+    
+    
+    UIButton *launchAviary = [UIButton buttonWithType:UIButtonTypeCustom];
+    launchAviary.frame = CGRectMake(self.view.frame.size.width/2, 80, 64, 64);
+    [launchAviary setBackgroundImage:[UIImage imageNamed:@"camera-64x64-pink"]
+                            forState:UIControlStateNormal];
+    
+    [launchAviary addTarget:self
+                     action:@selector(launchAviaryButtonClick)
+           forControlEvents:UIControlEventTouchUpInside];
 
-    
-    
-    /*UPCardsCarousel *carousel = [[UPCardsCarousel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height-20)];
-    [carousel setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
-    [carousel.labelBanner setBackgroundColor:[UIColor colorWithRed:112./255. green:47./255. blue:168./255. alpha:1.]];
-    [carousel setLabelFont:[UIFont boldSystemFontOfSize:17.0f]];
-    [carousel setLabelTextColor:[UIColor whiteColor]];
-    [carousel setDelegate:self];
-    [carousel setDataSource:self];
-    [self.view addSubview:carousel];*/
-    
-
+    [self.view addSubview:launchAviary];
     
 }
 
-- (NSUInteger)numberOfCardsInCarousel:(UPCardsCarousel *)carousel
-{
-    NSUInteger thecount = [_photoArray count];
-    NSLog(@"returning count: %lu",thecount);
-    return thecount;
-}
-
-- (UIView*)carousel:(UPCardsCarousel *)carousel viewForCardAtIndex:(NSUInteger)index
-{
-    //NSString *label = [NSString stringWithFormat:@"%i", (int)index];
-    //return [self createCardViewWithLabel:label];
-    return [self createCardViewWithImage:[_photoArray objectAtIndex:index]];
+-(BOOL)prefersStatusBarHidden {
     
-    //return [_photoArray objectAtIndex:index];
+    return YES;
+    
 }
 
-- (NSString*)carousel:(UPCardsCarousel *)carousel labelForCardAtIndex:(NSUInteger)index
+
+- (void)photoEditor:(AdobeUXImageEditorViewController *)editor finishedWithImage:(UIImage *)image
 {
-    return [NSString stringWithFormat:@"Crash is not happy about being crammed in the back seat", (int)index];
+    [editorController dismissViewControllerAnimated:YES
+                                         completion:^{
+                                             
+                                             
+                                             
+                                             
+        
+                                         }];
+    
+}
+
+- (void)photoEditorCanceled:(AdobeUXImageEditorViewController *)editor
+{
+    [editorController dismissViewControllerAnimated:YES completion:^{
+        
+        
+    }];
+}
+
+
+
+-(void)launchAviaryButtonClick {
+    
+    
+    UIImage *selectedImage = [UIImage imageNamed:[pictureData objectAtIndex:[_scrollView currentPage]]];
+    
+    [self displayEditorForImage:selectedImage];
+}
+
+
+- (void)displayEditorForImage:(UIImage *)imageToEdit
+{
+    editorController = [[AdobeUXImageEditorViewController alloc] initWithImage:imageToEdit];
+    [editorController setDelegate:self];
+    [self presentViewController:editorController animated:YES completion:nil];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)carousel:(UPCardsCarousel *)carousel didTouchCardAtIndex:(NSUInteger)index
-{
-    NSString *message = [NSString stringWithFormat:@"Card %i touched", (int)index];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:message
-                                                    message:nil
-                                                   delegate:nil
-                                          cancelButtonTitle:@"Ok"
-                                          otherButtonTitles:nil];
-    [alert show];
 }
 
 - (UIView*)createCardViewWithLabel:(NSString*)label
@@ -169,19 +180,18 @@
     return cardView;
 }
 
-
-
-
-- (void)loadNextPage:(id)sender
+/*- (void)loadNextPage:(id)sender
 {
     
-    
+    NSLog(@"loading page");
 }
 
 
 - (void)loadPageIndex:(NSUInteger)index animated:(BOOL)animated
 {
     
+    NSLog(@"load page at index: %i",index);
+    
 }
-
+*/
 @end

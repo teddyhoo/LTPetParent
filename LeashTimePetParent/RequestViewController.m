@@ -75,7 +75,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
     
     UIImageView *background = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [background setImage:[UIImage imageNamed:@"white-blue-bg-1136x640"]];
-    background.alpha = 0.2;
+    background.alpha = 0.6;
     [self.view addSubview:background];
     
     _calendarContentView = [[JTHorizontalCalendarView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 400)];
@@ -567,6 +567,8 @@ static NSString *CellIdentifier = @"CellIdentifier";
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(CustomCalendarDayView *)dayView
 {
     
+    NSLog(@"called prepared day view");
+    
     // Today
     if([_calendarManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
         dayView.circleView.hidden = NO;
@@ -582,21 +584,21 @@ static NSString *CellIdentifier = @"CellIdentifier";
         dayView.circleView.hidden = NO;
         dayView.circleView.backgroundColor = [UIColor redColor];
         dayView.dotView.backgroundColor = [UIColor redColor];
-        dayView.dotRatio = 1.2f;
+        dayView.dotRatio = 0.2f;
         dayView.textLabel.textColor = [UIColor whiteColor];
     }
     // Other month
     else if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
         dayView.circleView.hidden = YES;
         dayView.dotView.backgroundColor = [UIColor redColor];
-        dayView.dotRatio = 1.2f;
+        dayView.dotRatio = 0.2f;
         dayView.textLabel.textColor = [UIColor blackColor];
     }
     // Another day of the current month
     else{
         dayView.circleView.hidden = YES;
         dayView.dotView.backgroundColor = [UIColor redColor];
-        dayView.dotRatio = 1.2f;
+        dayView.dotRatio = 0.2f;
 
         dayView.textLabel.textColor = [UIColor blackColor];
     }
@@ -672,7 +674,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
         [_datesSelected addObject:dayView.date];
         [_sharedVisitsTracking.datesSelected addObject:dayView.date];
         
-        dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
+        dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
         [UIView transitionWithView:dayView
                           duration:0.2
                            options:0

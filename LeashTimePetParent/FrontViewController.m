@@ -188,7 +188,7 @@ BOOL isIphone4;
         [loginField setImage:[UIImage imageNamed:@"username-login-clean"]];
         [self.view addSubview:loginField];
         
-        UIImageView *passwordField = [[UIImageView alloc]initWithFrame:CGRectMake(passwordLabel.frame.origin.x, passwordLabel.frame.origin.y, 290, 30)];
+        UIImageView *passwordField = [[UIImageView alloc]initWithFrame:CGRectMake(passwordLabel.frame.origin.x, passwordLabel.frame.origin.y, 180, 60)];
         [passwordField setImage:[UIImage imageNamed:@"password-593x68"]];
         [self.view addSubview:passwordField];
         

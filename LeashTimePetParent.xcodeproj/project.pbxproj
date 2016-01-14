@@ -55,6 +55,15 @@
 		AD748C021C468D0E00CC376B /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C001C468D0E00CC376B /* libc++.1.dylib */; };
 		AD748C031C468D0E00CC376B /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C011C468D0E00CC376B /* libz.1.dylib */; };
 		AD748C051C468E2100CC376B /* login-button-341x94@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD748C041C468E2100CC376B /* login-button-341x94@3x.png */; };
+		AD748C071C471AB700CC376B /* AdobeCreativeSDKImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C061C471AB700CC376B /* AdobeCreativeSDKImage.framework */; };
+		AD748C091C471ADC00CC376B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C081C471ADC00CC376B /* CoreData.framework */; };
+		AD748C0B1C471B3E00CC376B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C0A1C471B3E00CC376B /* MessageUI.framework */; };
+		AD748C0D1C471B4700CC376B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C0C1C471B4700CC376B /* OpenGLES.framework */; };
+		AD748C0F1C471B4D00CC376B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C0E1C471B4D00CC376B /* QuartzCore.framework */; };
+		AD748C111C471B5B00CC376B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C101C471B5B00CC376B /* StoreKit.framework */; };
+		AD748C131C471BB500CC376B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD748C121C471BB500CC376B /* libsqlite3.dylib */; };
+		AD748C151C471BF300CC376B /* AdobeCreativeSDKImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD748C141C471BF300CC376B /* AdobeCreativeSDKImageResources.bundle */; };
+		AD748C171C47DC2C00CC376B /* camera-64x64-pink@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD748C161C47DC2C00CC376B /* camera-64x64-pink@3x.png */; };
 		AD75904D1C4684C900E428A7 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD75904C1C4684C900E428A7 /* AdobeCreativeSDKCore.framework */; };
 		AD7A2F881BF773E40031F55B /* high-blue-back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7A2F871BF773E40031F55B /* high-blue-back@3x.png */; };
 		AD7A2F8D1BF773ED0031F55B /* green-dot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD7A2F891BF773ED0031F55B /* green-dot@3x.png */; };
@@ -276,6 +285,15 @@
 		AD748C001C468D0E00CC376B /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
 		AD748C011C468D0E00CC376B /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		AD748C041C468E2100CC376B /* login-button-341x94@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-341x94@3x.png"; sourceTree = "<group>"; };
+		AD748C061C471AB700CC376B /* AdobeCreativeSDKImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKImage.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKImage.framework; sourceTree = "<group>"; };
+		AD748C081C471ADC00CC376B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AD748C0A1C471B3E00CC376B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AD748C0C1C471B4700CC376B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		AD748C0E1C471B4D00CC376B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AD748C101C471B5B00CC376B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AD748C121C471BB500CC376B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		AD748C141C471BF300CC376B /* AdobeCreativeSDKImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AdobeCreativeSDKImageResources.bundle; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKImage.framework/Versions/A/Resources/AdobeCreativeSDKImageResources.bundle; sourceTree = "<group>"; };
+		AD748C161C47DC2C00CC376B /* camera-64x64-pink@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-64x64-pink@3x.png"; sourceTree = "<group>"; };
 		AD75904C1C4684C900E428A7 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdobeCreativeSDKCore.framework; path = ../AdobeCreativeSDKFrameworks/AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
 		AD7A2F871BF773E40031F55B /* high-blue-back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "high-blue-back@3x.png"; sourceTree = "<group>"; };
 		AD7A2F891BF773ED0031F55B /* green-dot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-dot@3x.png"; sourceTree = "<group>"; };
@@ -544,14 +562,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD748C131C471BB500CC376B /* libsqlite3.dylib in Frameworks */,
 				AD748C021C468D0E00CC376B /* libc++.1.dylib in Frameworks */,
 				AD748C031C468D0E00CC376B /* libz.1.dylib in Frameworks */,
-				AD75904D1C4684C900E428A7 /* AdobeCreativeSDKCore.framework in Frameworks */,
-				AD0A33261C4673710082B238 /* SystemConfiguration.framework in Frameworks */,
 				AD0A33241C4673690082B238 /* MobileCoreServices.framework in Frameworks */,
-				ADEB610A1BAEF9C7002BDD46 /* CoreLocation.framework in Frameworks */,
-				ADEB61141BAEF9EB002BDD46 /* Accelerate.framework in Frameworks */,
+				AD748C111C471B5B00CC376B /* StoreKit.framework in Frameworks */,
+				AD748C0F1C471B4D00CC376B /* QuartzCore.framework in Frameworks */,
+				AD748C0D1C471B4700CC376B /* OpenGLES.framework in Frameworks */,
+				AD748C0B1C471B3E00CC376B /* MessageUI.framework in Frameworks */,
 				ADEB61121BAEF9E3002BDD46 /* Foundation.framework in Frameworks */,
+				ADEB61141BAEF9EB002BDD46 /* Accelerate.framework in Frameworks */,
+				AD748C071C471AB700CC376B /* AdobeCreativeSDKImage.framework in Frameworks */,
+				AD75904D1C4684C900E428A7 /* AdobeCreativeSDKCore.framework in Frameworks */,
+				AD748C091C471ADC00CC376B /* CoreData.framework in Frameworks */,
+				AD0A33261C4673710082B238 /* SystemConfiguration.framework in Frameworks */,
+				ADEB610A1BAEF9C7002BDD46 /* CoreLocation.framework in Frameworks */,
 				ADEB61101BAEF9DC002BDD46 /* UIKit.framework in Frameworks */,
 				ADEB610E1BAEF9D6002BDD46 /* MapKit.framework in Frameworks */,
 				ADEB610C1BAEF9CF002BDD46 /* CoreGraphics.framework in Frameworks */,
@@ -577,6 +602,7 @@
 				AD58A96A1BF379F30058F440 /* black-visit-note@3x.png */,
 				AD58A9661BF3781D0058F440 /* calendar-back-pink@3x.png */,
 				AD58A8A01BE3A4A00058F440 /* calendar128x128@3x.png */,
+				AD748C161C47DC2C00CC376B /* camera-64x64-pink@3x.png */,
 				AD58A89E1BE3A4980058F440 /* clockicon@3x.png */,
 				AD58A8881BE2E4990058F440 /* dollar-circle@3x.png */,
 				AD58A8901BE2E5100058F440 /* envelope-128x128@2x.png */,
@@ -596,6 +622,7 @@
 		ADEB60031BAEF8A8002BDD46 = {
 			isa = PBXGroup;
 			children = (
+				AD748C141C471BF300CC376B /* AdobeCreativeSDKImageResources.bundle */,
 				AD748BFE1C468CBA00CC376B /* AdobeCreativeSDKCoreResources.bundle */,
 				ADEB61171BAEFA4C002BDD46 /* Frameworks */,
 				ADEEB6141BB4B4BA00E6F4C3 /* UIComponents */,
@@ -868,6 +895,13 @@
 		ADEB61171BAEFA4C002BDD46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD748C121C471BB500CC376B /* libsqlite3.dylib */,
+				AD748C101C471B5B00CC376B /* StoreKit.framework */,
+				AD748C0E1C471B4D00CC376B /* QuartzCore.framework */,
+				AD748C0C1C471B4700CC376B /* OpenGLES.framework */,
+				AD748C0A1C471B3E00CC376B /* MessageUI.framework */,
+				AD748C081C471ADC00CC376B /* CoreData.framework */,
+				AD748C061C471AB700CC376B /* AdobeCreativeSDKImage.framework */,
 				AD748C001C468D0E00CC376B /* libc++.1.dylib */,
 				AD748C011C468D0E00CC376B /* libz.1.dylib */,
 				AD75904C1C4684C900E428A7 /* AdobeCreativeSDKCore.framework */,
@@ -1125,6 +1159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD748C151C471BF300CC376B /* AdobeCreativeSDKImageResources.bundle in Resources */,
 				AD748BFF1C468CBA00CC376B /* AdobeCreativeSDKCoreResources.bundle in Resources */,
 				ADEEB5B11BB4B26B00E6F4C3 /* cat1.jpg in Resources */,
 				ADEB601B1BAEF8A8002BDD46 /* Main.storyboard in Resources */,
@@ -1171,6 +1206,7 @@
 				ADEB60D21BAEF976002BDD46 /* apple calendar.plist in Resources */,
 				ADEEB58C1BB4B24100E6F4C3 /* photo-stack-4@2x.png in Resources */,
 				ADECF1E11BB8ADF700FE34E9 /* CompassRoseCPC-Bold.otf in Resources */,
+				AD748C171C47DC2C00CC376B /* camera-64x64-pink@3x.png in Resources */,
 				AD58A8891BE2E4990058F440 /* dollar-circle@3x.png in Resources */,
 				AD58A9501BF234440058F440 /* add-button-pink@3x.png in Resources */,
 				AD58A8B91BE6CA5A0058F440 /* back-button-blue-circle@3x.png in Resources */,

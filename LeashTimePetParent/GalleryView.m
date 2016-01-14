@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GalleryView.h"
+#import <AdobeCreativeSDKImage/AdobeCreativeSDKImage.h>
 
 
 @interface GalleryView() {
@@ -20,6 +21,8 @@
 @property (nonatomic,strong) UIImageView *currentImageFrame;
 @property (nonatomic,strong) UIImageView *favoriteIcon;
 @property (nonatomic,strong) UILabel *captionLabel;
+@property (nonatomic,copy) NSString *imageFileName;
+
 
 
 @end
@@ -42,6 +45,22 @@
     self = [self initWithFrame:frame];
     return self;
     
+}
+
+-(id)initWithFrame:(CGRect)frame andImage:(UIImage *)anImage andCaption:(NSString *)captionText {
+    
+    
+    _currentImageFrame  = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, frame.size.width-60, frame.size.height -330)];
+    [_currentImageFrame setImage:anImage];
+    
+    _captionLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, _currentImageFrame.frame.size.height - 10, _currentImageFrame.frame.size.width, 40)];
+    [_captionLabel setText:captionText];
+    [_captionLabel setFont:[UIFont fontWithName:@"CompassRoseCPC-Regular" size:18]];
+    [_captionLabel setTextColor:[UIColor blackColor]];
+    [_currentImageFrame addSubview:_captionLabel];
+    
+    self = [self initWithFrame:frame];
+    return self;
 }
 
 -(id)initWithFrame:(CGRect)frame {
@@ -74,6 +93,8 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint positionInScene = [touch locationInView:self];
+    
+    NSLog(@"touched image at tag: %i",self.tag);
     
 }
 

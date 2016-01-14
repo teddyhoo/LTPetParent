@@ -40,14 +40,14 @@
 {
     self.clipsToBounds = YES;
     
-    _circleRatio = 0.3;
-    _dotRatio = 7. / 9.;
+    _circleRatio = 0.6;
+    _dotRatio = 1. / 9.;
     
     {
         _circleView = [UIView new];
         [self addSubview:_circleView];
         
-        _circleView.backgroundColor = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:.5];
+        _circleView.backgroundColor = [UIColor colorWithRed:0x33/256. green:0xB3/256. blue:0xEC/256. alpha:0.9];
         _circleView.hidden = YES;
 
         _circleView.layer.rasterizationScale = [UIScreen mainScreen].scale;
@@ -75,7 +75,9 @@
     }
     
     {
-        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouch)];
+        UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(didTouch)];
         
         self.userInteractionEnabled = YES;
         [self addGestureRecognizer:gesture];

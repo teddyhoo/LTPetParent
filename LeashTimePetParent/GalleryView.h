@@ -16,5 +16,6 @@
 
 
 -(id)initWithFrame:(CGRect)frame andData:(NSString*)imageName andCaption:(NSString*)captionText;
+-(id)initWithFrame:(CGRect)frame andImage:(UIImage *)anImage andCaption:(NSString *)captionText;
 
 @end

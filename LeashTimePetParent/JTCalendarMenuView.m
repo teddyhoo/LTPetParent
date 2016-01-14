@@ -68,8 +68,8 @@ typedef NS_ENUM(NSInteger, JTCalendarPageMode) {
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.pagingEnabled = YES;
         _scrollView.delegate = self;
-        _scrollView.backgroundColor = [UIColor colorWithRed:0.1 green:0.6 blue:0.75 alpha:1.0];
-        
+        //_scrollView.backgroundColor = [UIColor colorWithRed:0.1 green:0.6 blue:0.75 alpha:1.0];
+        _scrollView.backgroundColor = [UIColor orangeColor];
         _scrollView.clipsToBounds = NO;
     }
 }
