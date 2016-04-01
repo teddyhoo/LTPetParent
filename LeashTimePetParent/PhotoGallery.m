@@ -10,14 +10,14 @@
 #import "GalleryView.h"
 #import "VisitsAndTracking.h"
 
-#import <AdobeCreativeSDKImage/AdobeCreativeSDKImage.h>
+//#import <AdobeCreativeSDKImage/AdobeCreativeSDKImage.h>
 
 
-@interface PhotoGallery () <AdobeUXImageEditorViewControllerDelegate> {
+@interface PhotoGallery ()  { //<AdobeUXImageEditorViewControllerDelegate> {
     
     NSMutableArray *pictureData;
     NSMutableArray *filterEffectImages;
-    AdobeUXImageEditorViewController *editorController;
+    //AdobeUXImageEditorViewController *editorController;
     int tagImageEditing;
     
 }
@@ -187,7 +187,7 @@
 }
 
 
-- (void)photoEditor:(AdobeUXImageEditorViewController *)editor finishedWithImage:(UIImage *)image
+/*- (void)photoEditor:(AdobeUXImageEditorViewController *)editor finishedWithImage:(UIImage *)image
 {
     [editorController dismissViewControllerAnimated:YES
                                          completion:^{
@@ -241,16 +241,16 @@
 
                                          }];
     
-}
+}*/
 
-- (void)photoEditorCanceled:(AdobeUXImageEditorViewController *)editor
+/*- (void)photoEditorCanceled:(AdobeUXImageEditorViewController *)editor
 {
     [editorController dismissViewControllerAnimated:YES completion:^{
         
         
     }];
 }
-
+*/
 -(void)addNoteInputFields {
     
     _imageCaptionNote = [[PSPDFTextView alloc]initWithFrame:CGRectMake(4, 84, 399, 80)];
@@ -299,10 +299,10 @@
 - (void)displayEditorForImage:(UIImage *)imageToEdit
 {
     
-    [AdobeImageEditorCustomization setToolOrder:@[kAFEnhance,kAFEffects,kAFStickers,kAFFocus,kAFLightingAdjust,kAFMeme,kAFFrames,kAFCrop,kAFDraw,kAFAdjustments]];
-    editorController = [[AdobeUXImageEditorViewController alloc] initWithImage:imageToEdit];
-    [editorController setDelegate:self];
-    [self presentViewController:editorController animated:YES completion:nil];
+    //[AdobeImageEditorCustomization setToolOrder:@[kAFEnhance,kAFEffects,kAFStickers,kAFFocus,kAFLightingAdjust,kAFMeme,kAFFrames,kAFCrop,kAFDraw,kAFAdjustments]];
+    //editorController = [[AdobeUXImageEditorViewController alloc] initWithImage:imageToEdit];
+    //[editorController setDelegate:self];
+    //[self presentViewController:editorController animated:YES completion:nil];
 }
 
 

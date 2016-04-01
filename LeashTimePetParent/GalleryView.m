@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GalleryView.h"
-#import <AdobeCreativeSDKImage/AdobeCreativeSDKImage.h>
+//#import <AdobeCreativeSDKImage/AdobeCreativeSDKImage.h>
 
 
 @interface GalleryView() {
