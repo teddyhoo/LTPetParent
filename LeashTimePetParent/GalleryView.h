@@ -14,8 +14,10 @@
 }
 
 
+@property (nonatomic,copy)NSString *caption;
 
 -(id)initWithFrame:(CGRect)frame andData:(NSString*)imageName andCaption:(NSString*)captionText;
 -(id)initWithFrame:(CGRect)frame andImage:(UIImage *)anImage andCaption:(NSString *)captionText;
+-(void)updateLabelForImage:(NSString*)captionLabel;
 
 @end

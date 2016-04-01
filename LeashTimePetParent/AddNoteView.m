@@ -21,7 +21,7 @@
         
         if ([theDeviceType isEqualToString:@"iPhone6P"]) {
             
-            _noteFrameBox = [[UIImageView alloc]initWithFrame:CGRectMake(0, 30,frame.size.width, frame.size.height-10)];
+            _noteFrameBox = [[UIImageView alloc]initWithFrame:CGRectMake(0, 30,frame.size.width, frame.size.height-30)];
             [_noteFrameBox setImage:[UIImage imageNamed:@"light-blue-box"]];
             _noteFrameBox.alpha = 0.7;
             
@@ -30,15 +30,10 @@
             
             
             _addedNote = [UIButton buttonWithType:UIButtonTypeCustom];
-            _addedNote.frame = CGRectMake(20, 0, 32, 32);
+            _addedNote.frame = CGRectMake(20, 20, 32, 32);
             [_addedNote setImage:[UIImage imageNamed:@"plus-icon"] forState:UIControlStateNormal];
             [_addedNote addTarget:self action:@selector(finishedNote) forControlEvents:UIControlEventTouchUpInside];
 
-            
-            
-            
-            _noteEntryText.delegate = self;
-            
             [self addSubview:_noteFrameBox];
             [self addSubview:_noteEntryText];
             [self addSubview:_addedNote];

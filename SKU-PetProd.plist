@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>ID</key>
+		<string>00001-0000</string>
+		<key>Description</key>
+		<string>Flea &amp; Tick Preventive</string>
+		<key>Manufacturer</key>
+		<string>Bayer</string>
+		<key>Product Name</key>
+		<string>Sentry</string>
+		<key>Method Apply</key>
+		<string>Topical</string>
+		<key>Wholesale Price</key>
+		<string>4.55</string>
+		<key>Retail Price</key>
+		<string>9.78</string>
+		<key>Product Description</key>
+		<string>Kills fleas and ticks on contact</string>
+	</dict>
+</array>
+</plist>

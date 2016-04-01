@@ -9,8 +9,8 @@
 #import "WellnessViewController.h"
 
 
-#define kTableHeaderHeight 70.0f
-#define kTableRowHeight 40.0f
+#define kTableHeaderHeight 80.0f
+#define kTableRowHeight 200.0f
 
 @interface WellnessViewController () {
 
@@ -34,19 +34,16 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 80.0f, self.view.bounds.size.width, self.view.bounds.size.height-100) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     [tableView setSectionHeaderHeight:kTableHeaderHeight];
     
     emTV = [[EMAccordionTableViewController alloc] initWithTable:tableView withAnimationType:EMAnimationTypeBounce];
     [emTV setDelegate:self];
     
     emParallaxHeaderView = [[EMAccordionTableParallaxHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.bounds.size.width, 120)];
-    emParallaxHeaderView.headerImage = [UIImage imageNamed:@"wellness-bg-sponsor"];
+    emParallaxHeaderView.headerImage = [UIImage imageNamed:@"Frontline-Logo"];
     emTV.parallaxHeaderView = emParallaxHeaderView;
-    [emTV setClosedSectionIcon:[UIImage imageNamed:@"green-add-button"]];
-    [emTV setOpenedSectionIcon:[UIImage imageNamed:@"red-remove-button"]];
-    
-    
+
     NSString *pListData = [[NSBundle mainBundle]
                            pathForResource:@"Wellness-Data"
                            ofType:@"plist"];
@@ -57,7 +54,7 @@
 
     UIColor *sectionsColor = [UIColor colorWithRed:62.0f/255.0f green:119.0f/255.0f blue:190.0f/255.0f alpha:1.0f];
     UIColor *sectionTitleColor = [UIColor clearColor];
-    UIFont *sectionTitleFont = [UIFont fontWithName:@"Lato-Regular" size:10.0f];
+    UIFont *sectionTitleFont = [UIFont fontWithName:@"Lato-Regular" size:18.0f];
     
     for (NSMutableDictionary *dicFor in theWellnessData) {
         
@@ -95,7 +92,6 @@
         section.serviceStatus = scheduleStatus;
         section.methodFor = methodFor;
         
-        [section setTitle:name];
         [section setItems:items];
 
         [emTV addAccordionSection:section];
@@ -112,46 +108,127 @@
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"emCell"];
     
-    NSMutableArray *items = [self dataFromIndexPath:indexPath];
+    EMAccordionSection *items = [self dataFromIndexPath:indexPath];
+
     
-    for (NSString *item in items) {
-        NSLog(@"item: %@",item);
-    }
-    UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, 5.0f, 320, 12)];
-    [titleLbl setFont:[UIFont fontWithName:@"Lato-Regular" size:12.0f]];
-    [titleLbl setText:[items objectAtIndex:indexPath.row]];
-    [titleLbl setBackgroundColor:[UIColor clearColor]];
-    [[cell contentView] addSubview:titleLbl];
-    cell.layer.borderWidth = 0.1;
-    cell.layer.borderColor = [UIColor blueColor].CGColor;
+    UIView *viewForCell = [self createCellViewWithSubsections:items atTableRow:indexPath];
+    [cell.contentView addSubview:viewForCell];
+
     
     
     return cell;
 }
 
+
+
+-(UIView*)createCellViewWithSubsections:(EMAccordionSection*)accordionSection atTableRow:(NSIndexPath*)row {
+    
+    
+    int cellHeight = accordionSection.viewHeight;
+    UIView *customCellView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, cellHeight)];
+    [customCellView setBackgroundColor:[UIColor orangeColor]];
+    
+    int yLabel = 0;
+
+    for (id item in accordionSection.items) {
+
+        if ([item isKindOfClass:[NSDictionary class]]) {
+
+        } else if ([item isKindOfClass:[NSString class]]) {
+            
+            NSString *stringItem = (NSString*)item;
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(40, yLabel, 200, 24)];
+            [label setFont:[UIFont fontWithName:@"Lato-Regular" size:18]];
+            [label setTextColor:[UIColor blackColor]];
+            [label setText:stringItem];
+            [customCellView addSubview:label];
+            yLabel+=40;
+        }
+        
+    }
+    return customCellView;
+    
+}
+
+-(int)calcNumLines:(NSString*)term {
+    
+    int numLines = 1;
+    
+    if ([term length] > 36 && [term length] < 74) {
+        numLines = 2;
+    } else if ([term length] > 73 && [term length] < 103) {
+        numLines = 3;
+    } else if ([term length] > 102 && [term length] < 136) {
+        numLines = 4;
+    } else if ([term length] > 135 && [term length] < 170){
+        numLines = 5;
+    } else if ([term length] > 169 && [term length] < 200){
+        numLines = 5;
+    } else if ([term length] > 199 && [term length] < 230) {
+        numLines = 6;
+    } else if ([term length] > 229 && [term length] < 260) {
+        numLines = 7;
+    } else if ([term length] > 259 && [term length] < 290) {
+        
+        numLines = 9;
+        
+    } else if ([term length] > 289) {
+        numLines = 12;
+    }
+    
+    return numLines;
+    
+}
+-(int)calcHeight:(NSString*)term {
+    
+    int height = 22;
+    
+    if ([term length] > 36 && [term length] < 74) {
+        height = 48;
+    } else if ([term length] > 73 && [term length] < 103) {
+        height = 68;
+    } else if ([term length] > 102 && [term length] < 136) {
+        height = 88;
+    } else if ([term length] > 135 && [term length] < 170){
+        height = 114;
+    } else if ([term length] > 169 && [term length] < 200){
+        height = 128;
+    } else if ([term length] > 199 && [term length] < 230) {
+        height = 148;
+    } else if ([term length] > 229 && [term length] < 260) {
+        height = 168;
+    } else if ([term length] > 259 && [term length] < 290) {
+        
+        height = 188;
+        
+    } else if ([term length] > 289) {
+        height = 238;
+    }
+    
+    return height;
+    
+}
+
+
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 200;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    EMAccordionSection *section = [sections objectAtIndex:indexPath.section];
-    NSMutableArray *items = [self dataFromIndexPath:indexPath];
-    
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oh my!" message:[[NSString alloc] initWithFormat:@"%@ : %@", section.title, [items objectAtIndex:indexPath.row]] delegate:NULL cancelButtonTitle:NULL otherButtonTitles:@"OK", nil];
-    [av show];
+
+    EMAccordionSection *items = [self dataFromIndexPath:indexPath];
 }
 
-- (NSMutableArray *) dataFromIndexPath: (NSIndexPath *)indexPath {
+- (EMAccordionSection *) dataFromIndexPath: (NSIndexPath *)indexPath {
 
     EMAccordionSection *sectionItems = [sections objectAtIndex:indexPath.section];
-    return sectionItems.items;
+    return sectionItems;
     
 
 }
 
-/*-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0, tableView.frame.size.width, 80)];
     headerView.backgroundColor = [UIColor whiteColor];
@@ -159,7 +236,7 @@
     headerView.layer.borderColor = [UIColor colorWithWhite:0.5 alpha:1.0].CGColor;
     
     UIImageView *headerBack = [[UIImageView alloc]initWithFrame:CGRectMake(0,0,headerView.frame.size.width, headerView.frame.size.height)];
-    [headerBack setImage:[UIImage imageNamed:@"yellow-bg-800x100"]];
+    [headerBack setImage:[UIImage imageNamed:@"light-blue-box"]];
     [headerView addSubview:headerBack];
     
     return headerView;
@@ -169,6 +246,6 @@
 {
     return 80.0;
 }
-*/
+
 
 @end

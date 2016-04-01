@@ -35,6 +35,7 @@
         _visitData = [[NSMutableArray alloc]init];
         _datesSelected = [[NSMutableArray alloc]init];
         _scheduleOfVisits = [[NSMutableArray alloc]init];
+        _petPictureLibrary = [[NSMutableArray alloc]init];
         
         self.isReachable = NO;
         self.isUnreachable = NO;
@@ -43,6 +44,11 @@
         //[self setUpReachability];
     }
     return self;
+}
+
+- (void)addPictureToLibrary:(UIImage*)petPic wasModified:(NSMutableDictionary*)picModified {
+    
+    
 }
 
 -(NSMutableArray*)getVisitsForDate:(NSDate*)visitsOnDate {
@@ -61,12 +67,10 @@
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     
-    _responseData = [[NSMutableData alloc]init];
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [_responseData appendData:data];
-    NSString *receivedDataString = [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
+
 }
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
@@ -103,9 +107,7 @@
 
 - (void) parseResponse:(NSData *) data {
     
-    NSString *myData = [[NSString alloc] initWithData:data
-                                             encoding:NSUTF8StringEncoding];
-    NSError *error = nil;
+
     
     
 }

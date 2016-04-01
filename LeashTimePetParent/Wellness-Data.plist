@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>Type</key>
-		<string>Administer pill monthly, REQUIRES Rx and annual test</string>
+		<string>PILL</string>
 		<key>Name</key>
 		<string>Heartgard Brand</string>
 		<key>Description</key>
@@ -27,24 +27,10 @@
 		<string>$8.47</string>
 		<key>methodFor</key>
 		<string>pill</string>
-		<key>New item - 7</key>
-		<string></string>
-		<key>New item - 6</key>
-		<string></string>
-		<key>New item - 5</key>
-		<string></string>
-		<key>New item - 4</key>
-		<string></string>
-		<key>New item - 3</key>
-		<string></string>
-		<key>New item - 2</key>
-		<string></string>
-		<key>New item</key>
-		<string></string>
 	</dict>
 	<dict>
 		<key>Type</key>
-		<string>Wellness</string>
+		<string>TOPICAL</string>
 		<key>Name</key>
 		<string>Flea &amp; Tick</string>
 		<key>Description</key>
@@ -84,15 +70,15 @@
 		<key>ScheduleStatus</key>
 		<string>YES</string>
 		<key>IconFor</key>
-		<string>two-pills</string>
+		<string>needle</string>
 		<key>MedBrand</key>
-		<string>Heartgard</string>
+		<string>Stone Pharmaceuticals</string>
 		<key>IconForMedBrand</key>
 		<string>none</string>
 		<key>MedCharge</key>
 		<string>$8.47</string>
 		<key>methodFor</key>
-		<string>pill</string>
+		<string>needle</string>
 	</dict>
 	<dict>
 		<key>Type</key>
@@ -118,7 +104,7 @@
 		<key>MedCharge</key>
 		<string>$8.47</string>
 		<key>methodFor</key>
-		<string>hypodermic</string>
+		<string>needle</string>
 	</dict>
 	<dict>
 		<key>Type</key>
@@ -144,7 +130,7 @@
 		<key>MedCharge</key>
 		<string>$8.47</string>
 		<key>methodFor</key>
-		<string>hypodermic</string>
+		<string>stool</string>
 	</dict>
 	<dict>
 		<key>Type</key>
@@ -170,7 +156,7 @@
 		<key>MedCharge</key>
 		<string>$8.47</string>
 		<key>methodFor</key>
-		<string>hypodermic</string>
+		<string>teeth</string>
 	</dict>
 	<dict>
 		<key>Type</key>
@@ -222,7 +208,7 @@
 		<key>MedCharge</key>
 		<string>$8.47</string>
 		<key>methodFor</key>
-		<string>hypodermic</string>
+		<string>lab-test-blood</string>
 	</dict>
 </array>
 </plist>

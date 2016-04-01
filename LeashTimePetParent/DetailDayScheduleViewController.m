@@ -132,26 +132,24 @@
             timeWindowLabel.tag = indexTagVal;
             [self.view addSubview:timeWindowLabel];
             
+            UILabel *statusLabel = [[UILabel alloc]initWithFrame:CGRectMake(x+100, visitYPos, 100,30)];
+            [statusLabel setFont:[UIFont fontWithName:@"Lato-Regular" size:16]];
+            [statusLabel setTextColor:[UIColor blackColor]];
+            [statusLabel setText:[detailDic objectForKey:@"Status"]];
+            statusLabel.tag = indexTagVal;
+            [self.view addSubview:statusLabel];
+            
             UIButton *cancelVisit = [UIButton buttonWithType:UIButtonTypeCustom];
-            cancelVisit.frame = CGRectMake(self.view.frame.size.width-40, timeWindowLabel.frame.origin.y, 32, 32);
+            cancelVisit.frame = CGRectMake(serviceLabel.frame.origin.x - 40, timeWindowLabel.frame.origin.y, 32, 32);
             [cancelVisit setImage:[UIImage imageNamed:@"minus-sign"] forState:UIControlStateNormal];
             cancelVisit.tag = indexTagVal;
             [cancelVisit addTarget:self action:@selector(cancelVisit:) forControlEvents:UIControlEventTouchUpInside];
             
             [self.view addSubview:cancelVisit];
             
-            UIButton *addNote = [UIButton buttonWithType:UIButtonTypeCustom];
-
-            addNote.frame = CGRectMake(serviceLabel.frame.origin.x - 40, serviceLabel.frame.origin.y, 32, 32);
-            [addNote setImage:[UIImage imageNamed:@"add-green-cross"] forState:UIControlStateNormal];
-            [addNote addTarget:self action:@selector(addNoteToVisit:) forControlEvents:UIControlEventTouchUpInside];
-            addNote.tag = indexTagVal;
-            [self.view addSubview:addNote];
-            
             [_visitScreenItems addObject:serviceLabel];
             [_visitScreenItems addObject:timeWindowLabel];
             [_visitScreenItems addObject:cancelVisit];
-            [_visitScreenItems addObject:addNote];
             
             
             y+=60;
@@ -176,9 +174,12 @@
         if (visitDetail.tag == chosenTag) [visitDetail removeFromSuperview];
     }
     
-    NSDictionary *chosenDic = [_sharedVisits.scheduleOfVisits objectAtIndex:chosenTag];
+    NSMutableDictionary *chosenDic = [_sharedVisits.scheduleOfVisits objectAtIndex:chosenTag];
     NSLog(@"chosen dic item: %@",chosenDic);
-    [_sharedVisits.scheduleOfVisits removeObjectAtIndex:chosenTag];
+    [chosenDic setObject:@"CANCELED" forKey:@"Status"];
+    
+    
+    NSLog(@"visit schedule raw: %@",chosenDic);
 
     
     

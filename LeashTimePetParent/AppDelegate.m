@@ -46,6 +46,8 @@ static NSString* const CreativeSDKClientId = @"b76f5d8aa2c046c6a9e8a6604a1235f4"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    application.statusBarHidden = YES;
+
     _sharedVisitsTracking = [VisitsAndTracking sharedInstance];
     
     if (IS_IPHONE_6P) {
@@ -104,6 +106,7 @@ static NSString* const CreativeSDKClientId = @"b76f5d8aa2c046c6a9e8a6604a1235f4"
     
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 

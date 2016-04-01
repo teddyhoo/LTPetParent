@@ -11,7 +11,7 @@
 
 const static NSUInteger     kMaxVisibleCardsDefault         = 6;
 const static NSUInteger     kHiddenDeckZPositionOffset      = 10;
-const static NSTimeInterval kMovingAnimationDurationDefault = .2f;
+const static NSTimeInterval kMovingAnimationDurationDefault = .1f;
 const static CGFloat        kLabelsContainerHeight          = 60;
 
 

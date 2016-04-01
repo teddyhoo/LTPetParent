@@ -19,28 +19,30 @@
 
 @interface VisitsAndTracking : NSObject <CLLocationManagerDelegate, NSURLSessionDelegate> {
     
-    NSMutableData *_responseData;
-    NSString *deviceType;
     
 }
 
 +(VisitsAndTracking *)sharedInstance;
 
-
 @property(nonatomic,strong)NSMutableArray *clientData;
 @property(nonatomic,strong)NSMutableArray *visitData;
 @property(nonatomic,strong)NSMutableArray *datesSelected;
 @property(nonatomic,strong)NSMutableArray *scheduleOfVisits;
+@property(nonatomic,strong)NSMutableArray *petPictureLibrary;
+
 
 -(NSMutableArray *)getTodayVisits;
--(NSMutableArray *)getClientData;
 
 @property BOOL isReachable;
 @property BOOL isUnreachable;
 @property BOOL isReachableViaWWAN;
 @property BOOL isReachableViaWiFi;
 @property NSString *deviceType;
+
+
 -(void)setDeviceType:(NSString*)typeDev;
 -(NSString*)tellDeviceType;
+- (void)addPictureToLibrary:(UIImage*)petPic wasModified:(NSMutableDictionary*)picModified;
+
 
 @end

@@ -28,4 +28,12 @@
 
 @interface FrontViewController : UIViewController
 
+@property BOOL isIphone6P;
+@property BOOL isIphone6;
+@property BOOL isIphone5;
+@property BOOL isIphone4;
+
+@property (nonatomic,strong)UITextField *loginName;
+@property (nonatomic,strong)UITextField *passWord;
+
 @end

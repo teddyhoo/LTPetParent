@@ -36,7 +36,7 @@
 #import "MessageViewController.h"
 #import "ProfileFormViewController.h"
 #import "ScheduleCalendarViewController.h"
-
+#import "SCPrimerViewController.h"
 
 @interface RearViewController()
 {
@@ -111,7 +111,7 @@
     
     if (row == 0)
     {
-        text = @"Visit Report";
+        text = @"VISIT REPORT";
         
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"appointbook128x128"]];
@@ -119,7 +119,7 @@
     }
     else if (row == 1)
     {
-        text = @"Request Visits";
+        text = @"SCHEDULE";
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"collar-leash"]];
         [cell.contentView addSubview:iconView];
@@ -127,21 +127,21 @@
     }
     else if (row == 2)
     {
-        text = @"Visit Calendar";
+        text = @"CALENDAR";
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"calendar128x128"]];
         [cell.contentView addSubview:iconView];
     }
     else if (row == 3)
     {
-        text = @"Pet Gallery";
+        text = @"GALLERY";
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"camera128x128"]];
         [cell.contentView addSubview:iconView];
     }
     else if (row == 4)
     {
-        text = @"Wellness";
+        text = @"WELLNESS";
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"medical-icon-red"]];
         [cell.contentView addSubview:iconView];
@@ -149,26 +149,26 @@
     else if (row == 5)
     {
         
-        text = @"Profile";
+        text = @"PROFILE";
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"dog-icon-outline"]];
         [cell.contentView addSubview:iconView];
     }
     else if (row == 6)
     {
-        text = @"Billing";
+        text = @"BILLING";
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"dollar-circle"]];
         [cell.contentView addSubview:iconView];
     } else if (row == 7)
     {
-        text = @"Account";
+        text = @"ACCOUNT";
         UIImageView *iconView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 25, 20, 20)];
         [iconView setImage:[UIImage imageNamed:@"settings-icon"]];
         [cell.contentView addSubview:iconView];
     }
 
-    cell.textLabel.font = [UIFont fontWithName:@"CompassRoseCPC-Regular" size:12];
+    cell.textLabel.font = [UIFont fontWithName:@"Langdon" size:18];
     cell.textLabel.text = NSLocalizedString(text,nil );
     cell.layer.borderWidth = 0.5;
     cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -203,8 +203,8 @@
 
     if (row == 0)
     {
-        newFrontController = [[MessageViewController alloc] init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontController];
+        newFrontController = [[SCPrimerViewController alloc] init];
+
         [revealController pushFrontViewController:newFrontController animated:YES];
         _presentedRow = row;  // <- store the presented row
 
@@ -214,7 +214,7 @@
     {
         
         newFrontController = [[RequestViewController alloc] init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontController];
+
         [revealController pushFrontViewController:newFrontController animated:YES];
         _presentedRow = row;  // <- store the presented row
 
@@ -224,7 +224,7 @@
     {
         
         newFrontController = [[RequestViewController alloc]init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontController];
+
         [revealController pushFrontViewController:newFrontController animated:YES];
         _presentedRow = row;  // <- store the presented row
 
@@ -233,7 +233,7 @@
     {
         
         newFrontController = [[PhotoGallery alloc]init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontController];
+
         [revealController pushFrontViewController:newFrontController animated:YES];
         _presentedRow = row;  // <- store the presented row
 
@@ -244,7 +244,7 @@
     {
     
         newFrontController = [[WellnessViewController alloc]init]; //Profile
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontController];
+
         [revealController pushFrontViewController:newFrontController animated:YES];
         _presentedRow = row;  // <- store the presented row
 
@@ -254,7 +254,7 @@
     else if (row == 5)
     {
         newFrontController = [[ProfileFormViewController alloc]init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newFrontController];
+
         [revealController pushFrontViewController:newFrontController animated:YES];
         _presentedRow = row;  // <- store the presented row
 

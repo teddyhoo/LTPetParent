@@ -25,8 +25,9 @@
 @property (nonatomic, copy) NSString *last;
 @property (nonatomic, copy) NSString *methodFor;
 
-
-
+@property int viewHeight;
+@property int medID;
+@property BOOL isScheduledWithServiceProvider;
 @property (nonatomic, strong) NSMutableArray *items;
 
 

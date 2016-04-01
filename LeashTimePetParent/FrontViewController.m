@@ -29,6 +29,7 @@
 #import "SWRevealViewController.h"
 #import "VisitsAndTracking.h"
 #import <AdobeCreativeSDKCore/AdobeCreativeSDKCore.h>
+#import "PharmaStyle.h"
 
 @interface FrontViewController() <NSURLSessionDelegate> {
     
@@ -38,8 +39,6 @@
 }
 
 @property (nonatomic,strong) UIButton *loginButton;
-@property (nonatomic,strong) UITextField *userName;
-@property (nonatomic,strong) UITextField *passWord;
 
 @end
 
@@ -71,173 +70,114 @@ BOOL isIphone4;
     CGFloat height = self.view.frame.size.height;
     
     
-    UIImageView *background = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    [background setImage:[UIImage imageNamed:@"login-sky-back"]];
-    background.alpha = 0.8;
-    [self.view addSubview:background];
-    
-    UIImageView *logoIcon = [[UIImageView alloc]initWithFrame:CGRectMake(10, 80, 48, 36)];
-    [logoIcon setImage:[UIImage imageNamed:@"leashtime-logo"]];
-    [self.view addSubview:logoIcon];
-    
-    
-    UILabel *userNameLabel;
-    UILabel *passwordLabel;
-    
-    sharedVisitsTracking = [[VisitsAndTracking alloc]init];
-    NSString *deviceType = [sharedVisitsTracking tellDeviceType];
-    
-    
-    _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_loginButton setBackgroundImage:[UIImage imageNamed:@"login-button-341x94"] forState:UIControlStateNormal];
-    [_loginButton addTarget:self
-                     action:@selector(loginButtonClick)
-           forControlEvents:UIControlEventTouchUpInside];
+    self.view.backgroundColor = [PharmaStyle colorBlueShadow];
 
+
+    sharedVisitsTracking = [[VisitsAndTracking alloc]init];
     
     
     [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CreativeSDKClientId
-                                                                   clientSecret:CreativeSDKClientSecret enableSignUp:true];
+                                                                   clientSecret:CreativeSDKClientSecret
+                                                                   enableSignUp:true];
     
     
     
-    if (isIphone5){
+    NSString *theDeviceType = [sharedVisitsTracking tellDeviceType];
+    
+    float x_logo_big_upper_right_corner = 5;
+    float y_logo_big_upper_right_corner = 15;
+    
+    float x_logo_size = 80;
+    float y_logo_size = 80;
+    
+    float x_LT = 100;
+    float y_LT = 10;
+    
+    UIImageView *loginTextBox;
+    UIImageView *passwordText;
+    
+    _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_loginButton setBackgroundImage:[UIImage imageNamed:@"login-red-200"] forState:UIControlStateNormal];
+    [_loginButton addTarget:self action:@selector(loginButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_loginButton];
+    
+    //if ([theDeviceType isEqualToString:@"iPhone6P"]) {
         
-        UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, width,height)];
-        [backgroundView setImage:[UIImage imageNamed:@"BG-login"]];
-        [self.view addSubview:backgroundView];
+        NSString *pListData = [[NSBundle mainBundle]
+                               pathForResource:@"/leashtime-logo-big@3x"
+                               ofType:@"png"];
+        NSString *pListData2 = [[NSBundle mainBundle]
+                                pathForResource:@"/leashtime-logo-text@3x"
+                                ofType:@"png"];
+        NSString *pListData3 = [[NSBundle mainBundle]
+                                pathForResource:@"/sit-stay-propser-compassrose@3x"
+                                ofType:@"png"];
         
-        UIImageView *logoIcon = [[UIImageView alloc]initWithFrame:CGRectMake(10, 120, 98, 76)];
+        UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(x_logo_big_upper_right_corner, y_logo_big_upper_right_corner, x_logo_size, y_logo_size)];
         
-        [logoIcon setImage:[UIImage imageNamed:@"dog-LTText"]];
-        [self.view addSubview:logoIcon];
+        logoView.image = [UIImage imageWithContentsOfFile:pListData];
+        logoView.backgroundColor = [UIColor clearColor];
+        logoView.alpha = 1.0;
         
-        NSLog(@"is iphone 5");
-        userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(width/2-150, height -340, 100, 20)];
-        passwordLabel = [[UILabel alloc]initWithFrame:CGRectMake(width/2-150, height -290, 100, 20)];
+        UIImageView *logoView2 = [[UIImageView alloc]initWithFrame:CGRectMake(x_LT,y_LT, 160,44)];
+        logoView2.image = [UIImage imageWithContentsOfFile:pListData2];
+        logoView2.backgroundColor = [UIColor clearColor];
+        logoView2.alpha = 1.0;
         
+        UIImageView *logoView3 = [[UIImageView alloc]initWithFrame:CGRectMake(90,60, 180,40)];
+        logoView3.image = [UIImage imageWithContentsOfFile:pListData3];
+        logoView3.backgroundColor = [UIColor clearColor];
+        logoView3.alpha = 1.0;
         
-        UIImageView *loginField = [[UIImageView alloc]initWithFrame:CGRectMake(width/2-70, userNameLabel.frame.origin.y, 180, 46)];
-        [loginField setImage:[UIImage imageNamed:@"login-button-gray"]];
-        [self.view addSubview:loginField];
+        [self.view addSubview:logoView];
+        [self.view addSubview:logoView2];
+        [self.view addSubview:logoView3];
+    
+    loginTextBox = [[UIImageView alloc]initWithFrame:CGRectMake(50,120, 300, 30)];
+    passwordText = [[UIImageView alloc]initWithFrame:CGRectMake(50,160, 300,30)];
+    _loginButton.frame = CGRectMake(100,250,170, 48);
+    
         
-        UIImageView *passwordField = [[UIImageView alloc]initWithFrame:CGRectMake(width/2-70, passwordLabel.frame.origin.y, 180, 46)];
-        [passwordField setImage:[UIImage imageNamed:@"password-gray"]];
-        [self.view addSubview:passwordField];
+        [loginTextBox setImage:[UIImage imageNamed:@"username-login-clean"]];
+        [self.view addSubview:loginTextBox];
+   
+    
+        _loginName = [[UITextField alloc]initWithFrame:CGRectMake(loginTextBox.frame.origin.x + 50,loginTextBox.frame.origin.y,loginTextBox.frame.size.width, loginTextBox.frame.size.height)];
+        [_loginName setClearsOnBeginEditing:YES];
+        [_loginName setBorderStyle:UITextBorderStyleNone];
+        [_loginName setTextColor:[UIColor whiteColor]];
+        [_loginName setFont:[UIFont fontWithName:@"Lato-Bold" size:26]];
+        _loginName.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _loginName.autocorrectionType = UITextAutocorrectionTypeNo;
         
-        _userName = [[UITextField alloc]initWithFrame:CGRectMake(width/2-20,height- 340,150,26)];
-        [_userName setClearsOnBeginEditing:YES];
-        [_userName setTextColor:[UIColor whiteColor]];
+        [self.view addSubview:_loginName];
         
-        [self.view addSubview:_userName];
+        [passwordText setImage:[UIImage imageNamed:@"password-593x68"]];
+        [self.view addSubview:passwordText];
         
-        _passWord = [[UITextField alloc]initWithFrame:CGRectMake(width/2-20, height- 290, 150, 26)];
+        _passWord = [[UITextField alloc]initWithFrame:CGRectMake(passwordText.frame.origin.x + 50,passwordText.frame.origin.y ,passwordText.frame.size.width, passwordText.frame.size.height)];
         [_passWord setClearsOnBeginEditing:YES];
+        [_passWord setBorderStyle:UITextBorderStyleNone];
         [_passWord setSecureTextEntry:YES];
-        [self.view addSubview:_passWord];
-        _loginButton.frame = CGRectMake(40, passwordField.frame.origin.y + 70, 340,68);
-
+        _passWord.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _passWord.autocorrectionType = UITextAutocorrectionTypeNo;
         
-    } else if (isIphone4) {
-        
-        UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, width,height)];
-        [backgroundView setImage:[UIImage imageNamed:@"login-bg-iphone4"]];
-        [self.view addSubview:backgroundView];
-        
-        UIImageView *logoIcon = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 68,46)];
-        [logoIcon setImage:[UIImage imageNamed:@"dog-LTText"]];
-        [self.view addSubview:logoIcon];
-        
-        userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(width/2-160, height - 390, 90, 40)];
-        passwordLabel = [[UILabel alloc]initWithFrame:CGRectMake(width/2-160, height - 340, 90, 40)];
-        _loginButton.frame = CGRectMake(width/2-65, height - 280, 190,48);
-        
-        UIImageView *loginField = [[UIImageView alloc]initWithFrame:CGRectMake(userNameLabel.frame.origin.x + 100, userNameLabel.frame.origin.y, 180, 46)];
-        [loginField setImage:[UIImage imageNamed:@"login-button-gray"]];
-        [self.view addSubview:loginField];
-        
-        UIImageView *passwordField = [[UIImageView alloc]initWithFrame:CGRectMake(passwordLabel.frame.origin.x + 100, passwordLabel.frame.origin.y, 180, 46)];
-        [passwordField setImage:[UIImage imageNamed:@"password-gray"]];
-        [self.view addSubview:passwordField];
-        
-        _userName = [[UITextField alloc]initWithFrame:CGRectMake(width/2,height - 390,180,26)];
-        [_userName setClearsOnBeginEditing:YES];
-        [_userName setTextColor:[UIColor whiteColor]];
-        [self.view addSubview:_userName];
-        
-        _passWord = [[UITextField alloc]initWithFrame:CGRectMake(width/2, height - 340, 180, 26)];
-        [_passWord setClearsOnBeginEditing:YES];
-        [_passWord setSecureTextEntry:YES];
-        [self.view addSubview:_passWord];
-        
-        
-    } else {
-        UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, width,height)];
-        [backgroundView setImage:[UIImage imageNamed:@"high-blue-back"]];
-        [self.view addSubview:backgroundView];
-        
-        UIImageView *logoIcon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, 80, 80)];
-        [logoIcon setImage:[UIImage imageNamed:@"leashtime-logo-big"]];
-        [self.view addSubview:logoIcon];
-        
-        userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, height - 650, 240, 50)];
-        passwordLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, height - 600, 240, 50)];
-        
-        UIImageView *loginField = [[UIImageView alloc]initWithFrame:CGRectMake(userNameLabel.frame.origin.x, userNameLabel.frame.origin.y, 290, 30)];
-        
-        [loginField setImage:[UIImage imageNamed:@"username-login-clean"]];
-        [self.view addSubview:loginField];
-        
-        UIImageView *passwordField = [[UIImageView alloc]initWithFrame:CGRectMake(passwordLabel.frame.origin.x, passwordLabel.frame.origin.y, 180, 60)];
-        [passwordField setImage:[UIImage imageNamed:@"password-593x68"]];
-        [self.view addSubview:passwordField];
-        
-        _userName = [[UITextField alloc]initWithFrame:CGRectMake(loginField.frame.origin.x  + 40,loginField.frame.origin.y,260,46)];
-        [_userName setClearsOnBeginEditing:YES];
-        [_userName setTextColor:[UIColor whiteColor]];
-        
-        [self.view addSubview:_userName];
-        
-        _passWord = [[UITextField alloc]initWithFrame:CGRectMake(passwordField.frame.origin.x +40, passwordField.frame.origin.y, 260, 46)];
-        [_passWord setClearsOnBeginEditing:YES];
-        [_passWord setSecureTextEntry:YES];
         [self.view addSubview:_passWord];
         
-        
-        _loginButton.frame = CGRectMake(80,logoIcon.frame.origin.y + 188, 300,56);
-        [self.view addSubview:_loginButton];
-    }
+   // }
     
-    [userNameLabel setFont:[UIFont fontWithName:@"CompassRoseCPC-Bold" size:12]];
-    [userNameLabel setText:@"USERNAME"];
-    //[self.view addSubview:userNameLabel];
     
-    [passwordLabel setFont:[UIFont fontWithName:@"CompassRoseCPC-Bold" size:12]];
-    [passwordLabel setText:@"PASSWORD"];
-    //[self.view addSubview:passwordLabel];
     
-    NSUserDefaults *loginSettings = [NSUserDefaults standardUserDefaults];
     
-    if ([loginSettings objectForKey:@"username"] != NULL) {
-        
-        _userName.text = [loginSettings objectForKey:@"username"];
-        
-        
-    }
-    
+    UILabel *versionLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-20, 200, 20)];
+    [versionLabel setFont:[UIFont fontWithName:@"Langdon" size:14]];
+    [versionLabel setTextColor:[UIColor whiteColor]];
+    [versionLabel setText:@"RELEASE: FEB 2, 2016"];
+    [self.view addSubview:versionLabel];
 	self.title = NSLocalizedString(@"My Pet App", nil);
     
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
-
-    
-    locationManager = [[CLLocationManager alloc]init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    if(IS_OS_8_OR_LATER) {
-        [locationManager requestAlwaysAuthorization];
-    }
 
 }
 
@@ -247,75 +187,10 @@ BOOL isIphone4;
 }
 
 
-- (void)startLocationTracking {
-    
-    if ([CLLocationManager locationServicesEnabled] == NO) {
-        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
-                                                                        message:@"You currently have all location services for this device disabled"
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-        [servicesDisabledAlert show];
-        
-    } else {
-        
-        
-        CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
-        
-        if(authorizationStatus == kCLAuthorizationStatusDenied || authorizationStatus == kCLAuthorizationStatusRestricted){
-            
-        } else {
-            
-            if(IS_OS_8_OR_LATER) {
-                [locationManager requestAlwaysAuthorization];
-            }
-            
-            [locationManager startUpdatingLocation];
-
-        }
-    }
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-
-}
-
-
-- (void)locationManager: (CLLocationManager *)manager didFailWithError: (NSError *)error
-{
-    
-    
-    switch([error code])
-    {
-        case kCLErrorNetwork: // general, network-related error
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Please check your network connection." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alert show];
-
-            
-        }
-            break;
-        case kCLErrorDenied:{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enable Location Service" message:@"You have to enable the Location Service to use this App. To enable, please go to Settings->Privacy->Location Services" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alert show];
-            
-        }
-            
-            break;
-            
-        default:
-        {
-            
-        }
-            break;
-    }
-}
-
-
 
 -(void)loginButtonClick {
     
-    NSString *userName = _userName.text;
+    NSString *userName = _loginName.text;
     NSString *password = _passWord.text;
     
     [_loginButton setAlpha:0.3];

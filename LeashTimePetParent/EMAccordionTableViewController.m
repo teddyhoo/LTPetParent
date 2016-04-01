@@ -100,7 +100,9 @@
     BOOL value = [[sectionsOpened objectAtIndex:section] boolValue];
     
     if (value) {
-        return emSection.items.count;
+        //return emSection.items.count;
+        
+        return 1;
     }
     else
         return 0;
@@ -151,35 +153,28 @@
     
     UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 100)];
     
-    UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 100)];;
-    [backgroundView setImage:[UIImage imageNamed:@"pink-bg-800x100"]];
-    backgroundView.alpha = 0.5;
-    [sectionView setBackgroundColor:[UIColor clearColor]];
-    [sectionView addSubview:backgroundView];
-    
     UIButton *sectionBtn = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, sectionView.bounds.size.width, sectionView.bounds.size.height)];
     [sectionBtn addTarget:self action:@selector(openTheSection:) forControlEvents:UIControlEventTouchDown];
     [sectionBtn setTag:(kSectionTag + section)];
     [sectionView addSubview:sectionBtn];
     
-    UILabel *cellTitle = [[UILabel alloc] initWithFrame:CGRectMake(25.0f, 5.0f, 300, 20)];
+    UILabel *cellTitle = [[UILabel alloc] initWithFrame:CGRectMake(50, 15.0f, 300, 30)];
     [cellTitle setText:emAccordionSection.title];
-    [cellTitle setFont:[UIFont fontWithName:@"Lato-Bold" size:16]];
+    [cellTitle setFont:[UIFont fontWithName:@"Lato-Regular" size:20]];
     [cellTitle setTextColor:[UIColor blackColor]];
     [cellTitle setBackgroundColor:[UIColor clearColor]];
     
+    UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 80)];;
+    [backgroundView setImage:[UIImage imageNamed:@"light-blue-box"]];
+    backgroundView.alpha = 1.0;
+    [sectionView setBackgroundColor:[UIColor clearColor]];
+    [sectionView addSubview:backgroundView];
     
-    UIImageView *medicalIcon = [[UIImageView alloc]initWithFrame:CGRectMake(60, 40, 20, 20)];
-    
-    UIImageView *adminSchedule = [[UIImageView alloc]initWithFrame:CGRectMake(25, 40, 20, 20)];
-    [adminSchedule setImage:[UIImage imageNamed:@"day-cal"]];
-    [sectionView addSubview:adminSchedule];
-
-    
+    UIImageView *medicalIcon = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 20, 20)];
     
     if ([emAccordionSection.methodFor isEqualToString:@"needle"]) {
         
-        [medicalIcon setImage:[UIImage imageNamed:@"hypodermic-needle"]];
+        [medicalIcon setImage:[UIImage imageNamed:@"needle"]];
         
     } else if ([emAccordionSection.methodFor isEqualToString:@"pill"]) {
         
@@ -187,13 +182,25 @@
         
     } else if ([emAccordionSection.methodFor isEqualToString:@"topical"]) {
         
-        [medicalIcon setImage:[UIImage imageNamed:@"two-pills"]];
+        [medicalIcon setImage:[UIImage imageNamed:@"topical"]];
+        
+    } else if ([emAccordionSection.methodFor isEqualToString:@"teeth"]) {
+        
+        [medicalIcon setImage:[UIImage imageNamed:@"toothbrush"]];
+        
+    } else if ([emAccordionSection.methodFor isEqualToString:@"stool"]) {
+        
+        [medicalIcon setImage:[UIImage imageNamed:@"poo"]];
+        
+    } else if ([emAccordionSection.methodFor isEqualToString:@"lab-test-blood"]) {
+        
+        [medicalIcon setImage:[UIImage imageNamed:@"lab-test-blood"]];
         
     }
     
-    
-    [sectionView addSubview:medicalIcon];
-    
+    UIImageView *calendarView = [[UIImageView alloc]initWithFrame:CGRectMake(sectionView.frame.size.width - 40, 15, 32, 32)];
+    [calendarView setImage:[UIImage imageNamed:@"calendar-icon"]];
+
     UIImageView *accessoryIV = [[UIImageView alloc] initWithFrame:CGRectMake(sectionView.frame.size.width - 40.0f, (sectionView.frame.size.height / 2) - 15.0f, 20.0f, 20.0f)];
     
     BOOL value = [[sectionsOpened objectAtIndex:section] boolValue];
@@ -204,8 +211,10 @@
     else
         [accessoryIV setImage:self.closedSectionIcon];
     
-    [sectionView addSubview:accessoryIV];
+    //[sectionView addSubview:accessoryIV];
     [sectionView addSubview:cellTitle];
+    [sectionView addSubview:medicalIcon];
+    [sectionView addSubview:calendarView];
 
     return sectionView;
 }

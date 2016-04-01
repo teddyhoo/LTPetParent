@@ -53,9 +53,10 @@
     _currentImageFrame  = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, frame.size.width-60, frame.size.height -330)];
     [_currentImageFrame setImage:anImage];
     
-    _captionLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, _currentImageFrame.frame.size.height - 10, _currentImageFrame.frame.size.width, 40)];
+    _captionLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, _currentImageFrame.frame.size.height - 10, _currentImageFrame.frame.size.width, 60)];
+    _captionLabel.numberOfLines = 2;
     [_captionLabel setText:captionText];
-    [_captionLabel setFont:[UIFont fontWithName:@"CompassRoseCPC-Regular" size:18]];
+    [_captionLabel setFont:[UIFont fontWithName:@"Langdon" size:24]];
     [_captionLabel setTextColor:[UIColor blackColor]];
     [_currentImageFrame addSubview:_captionLabel];
     
@@ -77,6 +78,11 @@
     return self;
 }
 
+
+-(void)updateLabelForImage:(NSString*)captionLabel {
+    
+    _captionLabel.text = captionLabel;
+}
 -(void)baseInit {
 
     
